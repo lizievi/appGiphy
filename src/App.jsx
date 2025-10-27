@@ -1,20 +1,25 @@
 import { useState } from "react";
 
 export const App = () => {
-  const [categories, setCategories] = useState(['One Punch', 'One Punch', 'One Punch'])
-  console.log(categories)
+  const [categories, setCategories] = useState([
+    "One Punch",
+    "One Punch",
+    "One Punch",
+  ]);
+  const onAddCategory = (newCategory) => {
+    setCategories([newCategory, ...categories])
+  }
+
   return (
     <>
-      {/* titulo */}
-      <h1>App</h1>
+      <h1>App Giphy</h1>
+      <form action="onAddCategory"></form>
 
-      {/* input */}
-      {/* Listado de gif */}
+      <button onClick={() => onAddCategory('Pokemon')}>Add</button>
       <ol>
         {categories.map((category, i) => {
-          return   <li key={i}>{category}</li>
+          return <li key={i}>{category}</li>;
         })}
-
       </ol>
       {/* Gif Item */}
     </>
