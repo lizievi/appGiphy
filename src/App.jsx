@@ -7,14 +7,14 @@ export const App = () => {
     "One Punch",
     "One Punch",
   ]);
-  const onAddCategory = (newCategory) => {
-    setCategories([newCategory, ...categories])
-  }
+  // const onAddCategory = (newCategory) => {
+  //   setCategories([newCategory, ...categories])
+  // }
 
   return (
     <>
       <h1>App Giphy</h1>
-      <AddCategory />
+      <AddCategory setCategories={setCategories}/>
 
       {/* <button onClick={() => onAddCategory('Pokemon')}>Add</button> */}
       <ol>
@@ -22,7 +22,6 @@ export const App = () => {
           return <li key={i}>{category}</li>;
         })}
       </ol>
-      {/* Gif Item */}
     </>
   );
 };
