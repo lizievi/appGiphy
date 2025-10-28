@@ -4,10 +4,9 @@ import { AddCategory } from "./components/AddCategory";
 export const App = () => {
   const [categories, setCategories] = useState([
     "One Punch",
-    "One Punch",
-    "One Punch",
   ]);
   const onAddCategory = (newCategory) => {
+    if(categories.includes(newCategory)) return
     setCategories([newCategory, ...categories])
   };
 
@@ -17,8 +16,8 @@ export const App = () => {
       <AddCategory onNewCategory={onAddCategory} />
 
       <ol>
-        {categories.map((category, i) => {
-          return <li key={i}>{category}</li>;
+        {categories.map((category) => {
+          return <li key={category}>{category}</li>;
         })}
       </ol>
     </>
