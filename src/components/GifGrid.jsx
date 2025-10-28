@@ -1,10 +1,11 @@
-export const GifGrid = ({ category }) => {
+import { getGifs } from "../helpers/getGifs";
 
-  const gifs = [1,2,3,4,5]
+export const GifGrid = ({ category }) => {
+  getGifs(category);
+
   return (
     <>
       <h3>{category}</h3>
-      
     </>
   );
 };
