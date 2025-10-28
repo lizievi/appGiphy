@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export const App = () => {
   const [categories, setCategories] = useState([
@@ -13,9 +14,9 @@ export const App = () => {
   return (
     <>
       <h1>App Giphy</h1>
-      <form action="onAddCategory"></form>
+      <AddCategory />
 
-      <button onClick={() => onAddCategory('Pokemon')}>Add</button>
+      {/* <button onClick={() => onAddCategory('Pokemon')}>Add</button> */}
       <ol>
         {categories.map((category, i) => {
           return <li key={i}>{category}</li>;
